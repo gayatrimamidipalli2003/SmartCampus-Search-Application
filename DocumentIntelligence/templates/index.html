@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Kendra Query</title>
+</head>
+<body>
+    <h1>AWS Kendra Query</h1>
+    <form method="POST">
+        <label for="query_text">Enter the query text:</label><br>
+        <input type="text" id="query_text" name="query_text"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if output %}
+        <h2>Results for "{{ query }}":</h2>
+        <ul>
+            {% for sentence in output %}
+                <li>{{ sentence }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
